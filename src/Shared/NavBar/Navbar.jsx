@@ -13,7 +13,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar fixed top-0 z-10 backdrop-blur-lg">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -23,7 +23,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <div className="btn btn-ghost text-xl flex items-center">
+                    <div className="text-xl flex items-center cursor-pointer">
                         <img className="w-14" src={logo} alt="logo" />
                         <p>An-Nahda Academy</p>
                     </div>
