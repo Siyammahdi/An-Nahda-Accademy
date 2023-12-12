@@ -4,8 +4,7 @@ import { IoLogoLinkedin } from "react-icons/io5";
 import { GiCoconuts } from "react-icons/gi";
 import { BsTelephone } from "react-icons/bs";
 import { LuMail } from "react-icons/lu";
-import logo from "../../assets/logo.png"
-
+import logo from '../../assets/Logo/logo.png';
 const Footer = () => {
     return (
         <div>
