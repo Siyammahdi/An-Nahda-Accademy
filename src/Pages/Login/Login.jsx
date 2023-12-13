@@ -21,7 +21,13 @@ const Login = () => {
 
   const validationSchema = Yup.object({
     email: Yup.string().email('Invalid email address').required('Email is required'),
-    password: Yup.string().required('Password is required'),
+    password: Yup.string()
+      .required('Password is required')
+      .min(6, 'Password must be at least 6 characters')
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
+        'Password must contain at least one uppercase letter, one lowercase letter, and one digit'
+      ),
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
@@ -33,9 +39,9 @@ const Login = () => {
   return (
     <div>
       <div className="hero min-h-screen" style={{ backgroundImage: `url(${loginBg})` }}>
-        <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero-content p-0 flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left w-1/2">
-            <h1 className="text-4xl font-bold ">Welcome Back Siyam Mahdi</h1>
+            <h1 className="text-4xl font-bold ">Welcome Back</h1>
             <p className="py-6">Reconnect with seamless access. Your trusted login awaits. Embrace familiarity and dive into a world tailored just for you. Happy returning</p>
             <button onClick={handleBack} className="btn btn-primary">Go Back</button>
           </div>
@@ -46,8 +52,8 @@ const Login = () => {
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
               >
-                <Form className="card-body">
-                  <h3 className="text-3xl font-semibold">Login</h3>
+                <Form className="card-body pb-0">
+                  <h3 className="text-3xl font-semibold">Sign In</h3>
                   <div className="form-control">
                     <label className="label">
                       <span className="label-text">Email</span>
@@ -60,6 +66,7 @@ const Login = () => {
                       <span className="label-text">Password</span>
                     </label>
                     <Field type="password" name="password" placeholder="password" className="input input-bordered" required />
+                    <ErrorMessage name="password" component="div" className="text-red-500" />
                     <label className="label">
                       <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>
