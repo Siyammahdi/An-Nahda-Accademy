@@ -1,11 +1,13 @@
 import Banner from "../Banner/Banner";
+import CategorySlider from "../CategorySlider/CategorySlider";
 
 
 const Home = () => {
     
     return (
-        <div className="h-screen">
+        <div className="overflow-x-hidden">
             <Banner></Banner>
+            <CategorySlider></CategorySlider>
         </div>
     );
 };

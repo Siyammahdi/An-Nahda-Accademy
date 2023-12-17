@@ -6,7 +6,7 @@ export default {
         nahdaDef: {
           primary: "#B6BBC4",
 
-          secondary: "#31304D",
+          secondary: "#ffba73",
 
           accent: "#4c00ff",
 

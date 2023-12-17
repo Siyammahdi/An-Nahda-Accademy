@@ -77,9 +77,9 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <div className="text-xl flex items-center cursor-pointer">
+          <div className="text-xl leading-5 mt-2 flex items-center cursor-pointer">
             <img className="w-14" src={logo} alt="logo" />
-            <p>An-Nahda Academy</p>
+            <p>An-Nahda <br /> Academy</p>
           </div>
         </div>
         <div className="navbar-end hidden lg:flex">
